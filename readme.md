@@ -23,6 +23,14 @@ Clone the repository and use the split_reads_V5_beta.py directly:
 <pre><code>git clone https://github.com/Nymeria8/splitreads.git
 </code></pre>
 
+## Dependencies:
++ [Python2](https://www.python.org/downloads/)
++ Python module [sys](https://docs.python.org/2/library/sys.html)
++ Python module [os](https://docs.python.org/2/library/os.html)
++ Python module [Biopython](https://biopython.org/)
++ Python module [collections](https://docs.python.org/2/library/collections.html)
++ [BWA](http://bio-bwa.sourceforge.net/)
+
 ## To run this script, you need:
 + An aligment file in SAM format of paired-end, large-insert whole genome sequencing, with a minimum of 25 bp of read size. We sujest [BWA aln](http://bio-bwa.sourceforge.net/) for the alignment, but any read alignment sotware that maintains the unmapped reads n the output file and uses the standard SAM flags should work.
 + A cluster that defines a rearrangement as given by [Talkowski et al, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3071919/) **OR** A rearrangement with two breakpoint regions and two read spanning reads, as showed in the image above.
@@ -38,3 +46,23 @@ In the command line:
 + [chr:a-a’-b’-b] and [chr:c-c’-d’-d]  - breakpoint regions as showed in the image above. a,b,c,d define the region covered by cluster reads; a',b',c',d' defines the breakpoint region.
 + [SAM file] - SAM output file of the alignment previously made
 + [reference genome] - hg19 or hg38
+
+## The output:
+
+The comand will output to the terminal the read pair (if exists) that contains the identified split read.
+**The user must always confirm the vality of the identified split read**, including:
++ Orientation in relation to the pair
++ Orientation in relation to the rearrangement
++ Orientation logic between the two aligned chunks
++ Possibiliy of (similaidades entre as duas sequencias que fazem o sitio do split igal nas duas)
+
+![alt text](https://cld.pt/dl/download/d2fe80e9-5c9b-4942-b0ce-eef953d72828/splitout.png "Split reads output")
+
+
+## Found a bug?
+
+Or maybe just wanto to drop some feedback? Just open an issue on github!
+
+## License:
+
+GPLv3
