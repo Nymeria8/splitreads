@@ -18,7 +18,14 @@
 
 **For more details, see [David et al, 2019](https://www.google.com)**
 
+## Instalation:
+Clone the repository and use the split_reads_V5_beta.py directly:
+<pre><code>git clone https://github.com/Nymeria8/splitreads.git
+</code></pre>
 
+## To run this script, you need:
++ An aligment file in SAM format of paired-end, large-insert whole genome sequencing, with a minimum of 25 bp of read size. We sujest [BWA aln](http://bio-bwa.sourceforge.net/) for the alignment, but any read alignment sotware that maintains the unmapped reads n the output file and uses the standard SAM flags should work.
++ A cluster that defines a rearrangement as given by [Talkowski et al, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3071919/) **OR** A rearrangement with two breakpoint regions and two read spanning reads, as showed in the image above.
 
 ## Usage:
 
@@ -28,5 +35,6 @@ In the command line:
 </code></pre>
 
 
-+ [chr:a-a’-b’-b] and [chr:c-c’-d’-d]  -breakpoint regions as showed in the image above. a,b,c,d define the region covered by cluster reads
-+ **I** - Isoform quantification. It uses the cuffmerge ouput gtf format of the [cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) pipeline.
++ [chr:a-a’-b’-b] and [chr:c-c’-d’-d]  - breakpoint regions as showed in the image above. a,b,c,d define the region covered by cluster reads; a',b',c',d' defines the breakpoint region.
++ [SAM file] - SAM output file of the alignment previously made
++ [reference genome] - hg19 or hg38
