@@ -8,7 +8,7 @@
 
 **This script works in continuation of the pipeline described by [Talkowski et al, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3071919/)**
 
-**A** Translocation cluster identified by liWGS data analysis.Arrowheads depict reads. Diamonds indicate the  breakpoint regions defined between genomic positions a-b and c-d, respectively.Triangles indicate the narrowest breakpoint-spanning intervals between a’-b’ and c’-d’.
+**A** Translocation cluster identified by liWGS data analysis.Arrowheads depict reads. Diamonds indicate the  breakpoint regions defined between genomic positions a-b and c-d, respectively. Triangles indicate the narrowest breakpoint-spanning intervals between a’-b’ and c’-d’.
 
 **B** Data selection step. The narrowest breakpoint-spanning FASTA sequences from both chromosomes are selected as weel as the unmapped-mate read-pairs for posterior analysis.
 
@@ -32,7 +32,7 @@ Clone the repository and use the split_reads_V5_beta.py directly:
 + [BWA](http://bio-bwa.sourceforge.net/)
 
 ## To run this script, you need:
-+ An aligment file in SAM format of paired-end, large-insert whole genome sequencing, with a minimum of 25 bp of read size. We sujest [BWA aln](http://bio-bwa.sourceforge.net/) for the alignment, but any read alignment sotware that maintains the unmapped reads n the output file and uses the standard SAM flags should work.
++ An alignment file in SAM format of paired-end, large-insert whole genome sequencing, with a minimum of 25 bp of read size. We suggest [BWA aln](http://bio-bwa.sourceforge.net/) for the alignment, but any read alignment software that maintains the unmapped reads n the output file and uses the standard SAM flags should work.
 + A cluster that defines a rearrangement as given by [Talkowski et al, 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3071919/) **OR** A rearrangement with two breakpoint regions and two read spanning reads, as showed in the image above.
 
 ## Usage:
@@ -49,19 +49,19 @@ In the command line:
 
 ## The output:
 
-The comand will output to the terminal the read pair (if exists) that contains the identified split read.
-**The user must always confirm the vality of the identified split read**, including:
+The command will output to the terminal the read pair (if exists) that contains the identified split read.
+**The user must always confirm the validity of the identified split read**, including:
 + Orientation in relation to the pair
 + Orientation in relation to the rearrangement
 + Orientation logic between the two aligned chunks
-+ Possibiliy of (similaidades entre as duas sequencias que fazem o sitio do split igal nas duas)
++ Possibility of ambiguity between both genomic regions, enabling a bigger match than the read size.
 
 ![alt text](https://cld.pt/dl/download/d2fe80e9-5c9b-4942-b0ce-eef953d72828/splitout.png "Split reads output")
 
 
 ## Found a bug?
 
-Or maybe just wanto to drop some feedback? Just open an issue on github!
+Or maybe just want to to drop some feedback? Just open an issue on github!
 
 ## License:
 
